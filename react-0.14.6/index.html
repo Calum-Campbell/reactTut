@@ -14,14 +14,24 @@
     <script type="text/jsx">
     
         var BuckysComponent = React.createClass({
+            doSomething:function(){
+                alert("the text displaying is "+ this.props.children);
+            },
             render: function() {
                 return (
-                        <h2>My name is Bucky</h2>
+                        <div>
+                        <h3>{this.props.user}</h3>
+                        <a onClick={this.doSomething} href="#">click me</a>
+                        </div>
                 );
             }
         });
 
-        React.render(<BuckysComponent />, document.getElementById('content'));
+        React.render(
+            <div>
+                <BuckysComponent user="Calum" >This guy is awesome</BuckysComponent>
+                <BuckysComponent user="Emily" >She is cool</BuckysComponent>
+            </div>, document.getElementById('content'));
 
     </script>
 
@@ -29,21 +39,3 @@
 </html>
 
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <script src"build/react.js"></script>
-    <script src"build/react-dom.js"></script>
-    <script src"https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.min.js"></script>
-    <title>React</title>
-  </head>
-  <body>
-    <div id="area"></div>
-    <script type="text/babel">
-      ReactDOM.render(
-          <h1>Hello</h1>,
-          document.getElementById('area')
-        );
-    </script>
-  </body>
-</html>
