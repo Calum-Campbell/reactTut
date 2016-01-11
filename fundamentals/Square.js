@@ -2,12 +2,6 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 
-var Knight = React.createClass({
-  render: function() {
-    return <span>K</span>
-  }
-})
-
 var Square = React.createClass({
   propTypes: {
     black : PropTypes.bool
@@ -20,5 +14,4 @@ var Square = React.createClass({
   }
 })
 
-module.exports = Knight;
-// module.exports = Square;
+module.exports = Square;
