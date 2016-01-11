@@ -4,5 +4,10 @@ var Piece = require('./Piece')
 var Square = require('./Square')
 
 
-ReactDOM.render(<Piece />, document.getElementById('app'))
+ReactDOM.render(
+  <Square black>
+  <Piece />
+  </Square>,
+   document.getElementById('app')
+   );
 
