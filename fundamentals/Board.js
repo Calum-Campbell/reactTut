@@ -9,7 +9,11 @@ var Board = React.createClass({
       PropTypes.number.isRequired
       ).isRequired
   },
-  renderSquare: function (x, y) {
+
+  renderSquare: function (i) {
+    var x = i % 8;
+    var y = Math.floor(i / 8);
+
     var black = (x + y) % 2 === 1;
 
     var pieceX = this.props.piecePosition[0];
@@ -19,21 +23,29 @@ var Board = React.createClass({
       null;
 
     return (
+      <div key={i}
+      style={{ width: '12.5%', height: '12.5%' }}>
       <Square black={black}>
         {piece}
       </Square>
+      </div>
     );
   },
+
   render: function () {
+    var squares =[];
+    for (let i = 0; i < 64; i++) {
+        squares.push(this.renderSquare(i));
+      }
+
     return (
       <div style={{
-        width: '100px',
-        height: '100px'
+        width: '1000px',
+        height: '1000px',
+        display: 'flex',
+        flexWrap: 'wrap'
       }}>
-        {this.renderSquare(0, 0)}
-        {this.renderSquare(1, 0)}
-        {this.renderSquare(2, 0)}
-        {this.renderSquare(3, 0)}
+        {squares}
       </div>
     );
   }
