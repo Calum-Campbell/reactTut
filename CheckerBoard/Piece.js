@@ -33,7 +33,7 @@ var Piece = React.createClass({
        <div style={{
          opacity: isDragging ? 0.5 : 1,
          color: isDragging ? 'red' : 'black',
-         fontSize: 25,
+         fontSize: 80,
          fontWeight: 'bold',
          cursor: 'move'
        }}>
