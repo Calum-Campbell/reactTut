@@ -3,6 +3,7 @@ var PropTypes = React.PropTypes;
 var Piece = require('./Piece');
 var Square = require('./Square');
 var movePiece = require('./Game').movePiece;
+var canMovePiece = require('./Game').canMovePiece;
 
 
 
@@ -23,29 +24,33 @@ var Board = React.createClass({
     var pieceX = this.props.piecePosition[0];
     var pieceY = this.props.piecePosition[1];
     var piece = (x === pieceX && y === pieceY) ?
-      <Piece /> :
-      null;
+    <Piece /> :
+    null;
 
     return (
       <div key={i}
       style={{ width: '12.5%', height: '12.5%' }}
       onClick={this.handleSquareClick.bind(this, x, y)}>
       <Square black={black}>
-        {piece}
+      {piece}
       </Square>
       </div>
-    );
+      );
   },
 
   handleSquareClick: function (toX, toY) {
-    movePiece(toX, toY)
+    if (canMovePiece(toX,toY)){
+      movePiece(toX, toY);
+    }else {
+      console.log("not legal move!")
+    }
   },
 
   render: function () {
     var squares =[];
     for (let i = 0; i < 64; i++) {
-        squares.push(this.renderSquare(i));
-      }
+      squares.push(this.renderSquare(i));
+    }
 
     return (
       <div style={{
@@ -54,9 +59,9 @@ var Board = React.createClass({
         display: 'flex',
         flexWrap: 'wrap'
       }}>
-        {squares}
+      {squares}
       </div>
-    );
+      );
   }
 })
 
