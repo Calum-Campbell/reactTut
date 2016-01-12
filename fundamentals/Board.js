@@ -2,6 +2,9 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var Piece = require('./Piece');
 var Square = require('./Square');
+var movePiece = require('./Game').movePiece;
+
+
 
 var Board = React.createClass({
   propTypes: {
@@ -25,12 +28,17 @@ var Board = React.createClass({
 
     return (
       <div key={i}
-      style={{ width: '12.5%', height: '12.5%' }}>
+      style={{ width: '12.5%', height: '12.5%' }}
+      onClick={this.handleSquareClick.bind(this, x, y)}>
       <Square black={black}>
         {piece}
       </Square>
       </div>
     );
+  },
+
+  handleSquareClick: function (toX, toY) {
+    movePiece(toX, toY)
   },
 
   render: function () {
