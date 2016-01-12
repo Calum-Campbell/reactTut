@@ -5,6 +5,10 @@ var Square = require('./Square');
 var movePiece = require('./Game').movePiece;
 var canMovePiece = require('./Game').canMovePiece;
 
+var DragDropContext = require('react-dnd').DragDropContext;
+var HTML5Backend = require('react-dnd-html5-backend');
+
+
 
 
 var Board = React.createClass({
@@ -66,3 +70,5 @@ var Board = React.createClass({
 })
 
 module.exports = Board;
+module.exports = DragDropContext(HTML5Backend)(Board);
+
