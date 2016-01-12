@@ -12,6 +12,7 @@ var Board = React.createClass({
 
   renderSquare: function (i) {
     var x = i % 8;
+    // console.log(x)
     var y = Math.floor(i / 8);
 
     var black = (x + y) % 2 === 1;
@@ -40,7 +41,7 @@ var Board = React.createClass({
 
     return (
       <div style={{
-        width: '1000px',
+        width: '100%',
         height: '1000px',
         display: 'flex',
         flexWrap: 'wrap'
