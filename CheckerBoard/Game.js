@@ -29,7 +29,6 @@ exports.canMovePiece = function (toX, toY){
 }
 
 exports.movePiece = function (toX, toY) {
-
   piecePosition = [toX, toY];
   localStorage.setItem('position', piecePosition);
 

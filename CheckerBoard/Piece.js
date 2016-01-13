@@ -32,7 +32,6 @@ var Piece = React.createClass({
     return connectDragSource(
        <div style={{
          opacity: isDragging ? 0.5 : 1,
-         color: isDragging ? 'red' : 'black',
          fontSize: 80,
          fontWeight: 'bold',
          cursor: 'move'
