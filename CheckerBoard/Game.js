@@ -1,4 +1,3 @@
-// var piecePosition = [0, 0];
 var observer = null;
 
 var positionArray = localStorage.getItem('position').split(',');
@@ -30,8 +29,9 @@ exports.canMovePiece = function (toX, toY){
 }
 
 exports.movePiece = function (toX, toY) {
-  localStorage.setItem('position', piecePosition);
 
   piecePosition = [toX, toY];
+  localStorage.setItem('position', piecePosition);
+
   emitChange();
 }
