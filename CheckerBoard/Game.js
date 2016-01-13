@@ -1,8 +1,12 @@
-var piecePosition = [0, 2];
+// var piecePosition = [0, 0];
 var observer = null;
 
+var positionArray = localStorage.getItem('position').split(',');
+for(var i=0; i<positionArray.length; i++) { positionArray[i] = +positionArray[i]; } 
+
+var piecePosition = positionArray || [0,0];
+
 function emitChange() {
-  console.log(piecePosition)
   observer(piecePosition);
 }
 
@@ -22,10 +26,12 @@ exports.canMovePiece = function (toX, toY){
   const dy = toY - y;
 
   return (Math.abs(dx) === 2 && Math.abs(dy) === 1) ||
-         (Math.abs(dx) === 1 && Math.abs(dy) === 2);
+  (Math.abs(dx) === 1 && Math.abs(dy) === 2);
 }
 
 exports.movePiece = function (toX, toY) {
+  localStorage.setItem('position', piecePosition);
+
   piecePosition = [toX, toY];
   emitChange();
 }

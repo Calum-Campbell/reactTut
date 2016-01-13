@@ -1,4 +1,6 @@
 var React = require('react');
+var LocalStorageMixin = require('react-localstorage');
+
 var PropTypes = React.PropTypes;
 var Piece = require('./Piece');
 var Square = require('./Square');
@@ -16,6 +18,9 @@ var Board = React.createClass({
       PropTypes.number.isRequired
       ).isRequired
   },
+
+  mixins: [LocalStorageMixin],
+
 
   renderSquare: function (i) {
     var x = i % 8;
