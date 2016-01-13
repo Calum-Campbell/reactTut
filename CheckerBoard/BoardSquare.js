@@ -12,7 +12,6 @@ var squareTarget = {
   },
 
   drop: function (props) {
-    console.log(props)
     movePiece(props.x, props.y);
   }
 };

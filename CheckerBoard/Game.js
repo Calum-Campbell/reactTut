@@ -1,17 +1,8 @@
-
-// exports.observe = function (receive) {
-//   setInterval(function () {
-//     receive([
-//       Math.floor(Math.random() * 8),
-//       Math.floor(Math.random() * 8)
-//     ]);
-//   }, 500);
-// };
-
-var piecePosition = [0, 0];
+var piecePosition = [0, 2];
 var observer = null;
 
 function emitChange() {
+  console.log(piecePosition)
   observer(piecePosition);
 }
 

@@ -10,7 +10,7 @@ var Square = React.createClass({
   render: function() {
     var black = this.props.black;
     var fill = black ? 'black' : 'white';
-    var stroke = black ? 'white' : 'black';
+    var stroke = black ? 'red' : 'red';
 
     return (
       <div style={{

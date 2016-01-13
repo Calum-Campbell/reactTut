@@ -8,17 +8,6 @@ var observe   = require('./Game').observe;
 
 var rootEl   = document.getElementById('app');
 
-// ReactDOM.render(
-//   <Square black>
-//   <Piece />
-//   </Square>,
-//    document.getElementById('app')
-//    );
-
-// ReactDOM.render(
-//   <Board piecePosition={[5, 5]} />,
-//   document.getElementById('app')
-//   );
 
 observe(function (piecePosition) {
   ReactDOM.render(
