@@ -4,7 +4,7 @@ This is a simple ChessBoard with one moving piece built with React.js
 
 ###Notes
 1. Built using webpack, Babel and React.js
-2. Drag and Drop functionality iplemented using React DnD
+2. Drag and Drop functionality iplemented using React DnD library
 
 
 ####Using the App
